@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const img=document.querySelector('.portrait');const placeholder=document.querySelector('.portrait-placeholder');if(img){img.addEventListener('error',()=>{img.style.display='none';placeholder.style.display='block';});}});

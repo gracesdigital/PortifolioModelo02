@@ -1,0 +1,589 @@
+/* ==================================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   VARIÁVEIS DE CORES
+   ================================================== */
+
+:root {
+    --bg: #242424;
+    --paper: #f2b900;
+    --text: #f6f3eb;
+    --muted: #bdbab2;
+    --line: #f6f3eb;
+}
+
+
+/* ==================================================
+   CONFIGURAÇÕES DO BODY
+   ================================================== */
+
+body {
+    background: #151515;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    padding: 18px;
+}
+
+
+/* ==================================================
+   ESTRUTURA PRINCIPAL DO PORTFÓLIO
+   ================================================== */
+
+.portfolio-shell {
+    max-width: 1180px;
+    margin: auto;
+    background: var(--bg);
+    border: 1px solid #3c3c3c;
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   BARRA SUPERIOR
+   ================================================== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 12px 24px;
+    border-bottom: 1px solid #4a4a4a;
+
+    font: 11px 'Barlow Condensed', sans-serif;
+    letter-spacing: 1.5px;
+    color: #d4d0c6;
+}
+
+
+/* ==================================================
+   SEÇÃO INICIAL — APRESENTAÇÃO
+   ================================================== */
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr 1fr;
+    gap: 30px;
+
+    padding: 42px 48px;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+
+/* Texto de destaque acima dos títulos */
+
+.eyebrow {
+    font: 600 12px 'Barlow Condensed', sans-serif;
+    letter-spacing: 2px;
+    color: var(--paper);
+    margin-bottom: 20px;
+}
+
+
+/* Título principal */
+
+.hero-title h1 {
+    font: 800 clamp(72px, 10vw, 145px) / 0.78 'Barlow Condensed', sans-serif;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+}
+
+
+/* Destaque colorido do título */
+
+.hero-title h1 span {
+    color: var(--paper);
+}
+
+
+/* Texto de apresentação */
+
+.intro {
+    max-width: 300px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 28px;
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   FOTO DO PROFISSIONAL
+   ================================================== */
+
+.portrait-area {
+    position: relative;
+    min-height: 310px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #656565;
+    background: linear-gradient(135deg, #343434, #171717);
+    overflow: hidden;
+}
+
+
+/* Imagem de perfil */
+
+.portrait {
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+
+    object-fit: cover;
+    display: block;
+
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+
+/* Placeholder exibido atrás da foto */
+
+.portrait-placeholder {
+    position: absolute;
+    z-index: 0;
+
+    font: 800 110px 'Barlow Condensed', sans-serif;
+    color: var(--paper);
+    opacity: 0.8;
+}
+
+
+/* Posicionamento da imagem */
+
+.portrait[src] {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Identificação abaixo da foto */
+
+.portrait-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    z-index: 2;
+
+    font: 11px 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    color: var(--paper);
+}
+
+
+/* ==================================================
+   FRASE DE DESTAQUE
+   ================================================== */
+
+.hero-quote {
+    align-self: end;
+    padding-bottom: 12px;
+
+    color: #e9e5da;
+    font: 500 24px / 1.2 'Barlow Condensed', sans-serif;
+}
+
+
+/* Aspas decorativas */
+
+.quote-mark {
+    font: 800 72px / 0 'Barlow Condensed', sans-serif;
+    color: var(--paper);
+}
+
+
+/* Aspas de fechamento */
+
+.closing {
+    display: block;
+    text-align: right;
+    margin-top: 28px;
+}
+
+
+/* ==================================================
+   GRADE DE CONTEÚDO
+   ================================================== */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0;
+}
+
+
+/* Estilo geral dos painéis */
+
+.panel {
+    padding: 30px 38px;
+    border-bottom: 1px solid #4a4a4a;
+    min-width: 0;
+}
+
+
+/* ==================================================
+   CABEÇALHOS DOS PAINÉIS
+   ================================================== */
+
+.panel-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+
+/* Numeração ou marcador do painel */
+
+.panel-heading span {
+    color: var(--paper);
+    font: 700 14px 'Barlow Condensed', sans-serif;
+}
+
+
+/* Títulos dos painéis */
+
+.panel-heading h2 {
+    font: 600 31px / 1 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+
+/* ==================================================
+   EXPERIÊNCIA PROFISSIONAL
+   ================================================== */
+
+.experience-panel {
+    grid-row: span 2;
+    border-right: 1px solid #4a4a4a;
+}
+
+
+/* Cada item da linha do tempo */
+
+.timeline-item {
+    border-left: 2px solid var(--paper);
+
+    padding: 0 0 22px 18px;
+    margin-bottom: 20px;
+}
+
+
+/* Datas e destaques da experiência */
+
+.timeline-item strong,
+.education-panel strong {
+    color: var(--paper);
+    font: 600 13px 'Barlow Condensed', sans-serif;
+}
+
+
+/* Cargo ou título da experiência */
+
+.timeline-item h3,
+.education-panel h3 {
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+
+/* Descrição das experiências e formações */
+
+.timeline-item p,
+.education-panel p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+
+/* ==================================================
+   CONTATO
+   ================================================== */
+
+.contact-panel {
+    background: #2b2b2b;
+}
+
+
+/* Links de contato */
+
+.contact-panel a {
+    display: block;
+
+    color: var(--text);
+    text-decoration: none;
+
+    padding: 11px 0;
+    border-bottom: 1px solid #4a4a4a;
+
+    font-size: 13px;
+}
+
+
+/* Efeito ao passar o mouse nos contatos */
+
+.contact-panel a:hover {
+    color: var(--paper);
+}
+
+
+/* Localização do profissional */
+
+.location {
+    color: var(--paper);
+    margin-top: 20px;
+    font: 14px 'Barlow Condensed', sans-serif;
+}
+
+
+/* ==================================================
+   HOBBIES E INTERESSES
+   ================================================== */
+
+.hobbies-panel {
+    border-right: 1px solid #4a4a4a;
+}
+
+
+/* Lista de interesses */
+
+.interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+/* Cada interesse */
+
+.interest-list span {
+    border: 1px solid #666;
+    padding: 9px 12px;
+
+    font: 14px 'Barlow Condensed', sans-serif;
+    color: #eee;
+}
+
+
+/* ==================================================
+   HABILIDADES E COMPETÊNCIAS
+   ================================================== */
+
+.skill {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+
+    margin: 18px 0;
+    font-size: 12px;
+}
+
+
+/* Nome ou nível da habilidade */
+
+.skill b {
+    color: var(--paper);
+    font-weight: 500;
+}
+
+
+/* Fundo da barra de habilidade */
+
+.skill i {
+    grid-column: 1 / -1;
+
+    height: 7px;
+    border: 1px solid #777;
+    background: #171717;
+}
+
+
+/* Preenchimento que representa o nível */
+
+.skill i em {
+    display: block;
+    height: 100%;
+    background: var(--paper);
+}
+
+
+/* ==================================================
+   FORMAÇÃO ACADÊMICA
+   ================================================== */
+
+.education-panel {
+    border-right: 1px solid #4a4a4a;
+}
+
+
+/* Espaçamento entre as formações */
+
+.education-panel article {
+    margin-bottom: 24px;
+}
+
+
+/* ==================================================
+   PROJETOS
+   ================================================== */
+
+.project-list article {
+    display: flex;
+    gap: 18px;
+
+    padding: 17px 0;
+    border-top: 1px solid #4a4a4a;
+}
+
+
+/* Numeração dos projetos */
+
+.project-list article > span {
+    color: var(--paper);
+    font: 700 18px 'Barlow Condensed', sans-serif;
+}
+
+
+/* Título de cada projeto */
+
+.project-list h3 {
+    font: 600 23px 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+
+/* Descrição dos projetos */
+
+.project-list p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+
+/* ==================================================
+   RODAPÉ
+   ================================================== */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    padding: 15px 24px;
+
+    background: var(--paper);
+    color: #222;
+
+    font: 12px 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+
+/* Link "Criado por Sabrina Amorim" */
+
+.footer a {
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* Efeito ao passar o mouse no link do rodapé */
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #222;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE — TABLETS E CELULARES
+   ================================================== */
+
+@media (max-width: 800px) {
+
+    /* Reduz o espaçamento externo */
+
+    body {
+        padding: 7px;
+    }
+
+
+    /* Organiza a apresentação em uma coluna */
+
+    .section-grid {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+    }
+
+
+    /* Ajusta o título principal */
+
+    .hero-title h1 {
+        font-size: 100px;
+    }
+
+
+    /* Mantém a foto com altura adequada */
+
+    .portrait-area {
+        min-height: 300px;
+    }
+
+
+    /* Organiza os painéis em uma coluna */
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Remove bordas laterais dos painéis */
+
+    .experience-panel,
+    .hobbies-panel,
+    .education-panel {
+        border-right: none;
+    }
+
+
+    /* Ajusta o espaçamento interno dos painéis */
+
+    .panel {
+        padding: 26px 24px;
+    }
+
+
+    /* Organiza o rodapé verticalmente */
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+
+    /* Reduz o espaçamento da barra superior */
+
+    .topbar {
+        padding: 10px 14px;
+        font-size: 10px;
+    }
+}
